@@ -27,11 +27,14 @@ public class Course {
         }
     }
 
-//    public void addModule(Module m) {
-//        if (m != null) {
-//            modules.add(m);
-//        }
-//    }
+    public void addModule(Module m) {
+        if (m != null) {
+            if (!this.modules.contains(m)) {
+                this.modules.add(m);
+                m.setCourse(this);
+            }
+        }
+    }
 //
 //    public ArrayList<Module> getmodules() {
 //        return modules;
