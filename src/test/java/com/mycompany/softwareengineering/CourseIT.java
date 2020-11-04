@@ -51,4 +51,14 @@ public class CourseIT {
         assertSame(instance.students.get(0), s);
     }
     
+        @Test
+    public void testAddModule() {
+        System.out.println("addModule");
+        Module m = new Module("Software Engineering", "CT411");
+        Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        instance.addModule(m);
+        
+        assertSame(instance.modules.get(0), m);
+    }
+    
 }

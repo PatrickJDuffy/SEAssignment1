@@ -8,14 +8,14 @@ public class Course {
     private String name;
     public ArrayList<Student> students;
     public ArrayList<Module> modules;
-    private DateTime startDate, endDate;
+    private final DateTime startDate, endDate;
 
     public Course(String Name, DateTime startDate, DateTime endDate) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        students = new ArrayList<Student>();
-        modules = new ArrayList<Module>();
+        students = new ArrayList<>();
+        modules = new ArrayList<>();
     }
 
     public void addStudent(Student s) {
@@ -23,6 +23,9 @@ public class Course {
             if (!this.students.contains(s)) {
                 this.students.add(s);
                 s.setCourse(this);
+                for (int x = 0; x < modules.size(); x++) {
+                    s.addModule(modules.get(x));
+                }
             }
         }
     }
@@ -31,13 +34,13 @@ public class Course {
         if (m != null) {
             if (!this.modules.contains(m)) {
                 this.modules.add(m);
-                m.setCourse(this);
+                m.addCourse(this);
             }
         }
     }
-//
-//    public ArrayList<Module> getmodules() {
-//        return modules;
-//    }
+
+    public ArrayList<Module> getmodules() {
+        return modules;
+    }
 
 }
