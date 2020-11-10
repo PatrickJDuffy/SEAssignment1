@@ -10,12 +10,12 @@ public class Course {
     public ArrayList<Module> modules;
     private final DateTime startDate, endDate;
 
-    public Course(String Name, DateTime startDate, DateTime endDate) {
+    public Course(String name, DateTime startDate, DateTime endDate) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        students = new ArrayList<>();
-        modules = new ArrayList<>();
+        students = new ArrayList<Student>();
+        modules = new ArrayList<Module>();
     }
 
     public void addStudent(Student s) {

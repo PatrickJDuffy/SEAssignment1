@@ -11,17 +11,19 @@ public class Module {
     public Module(String name, String iD) {
         this.name = name;
         this.iD = iD;
+        students = new ArrayList<Student>();
+        courses = new ArrayList<Course>();
     }
 
     public void addCourse(Course c) {
         if (!(c == null)) {
-            courses.add(c);
+            this.courses.add(c);
         }
     }
 
     public void addStudent(Student s) {
         if (!(s == null)) {
-            students.add(s);
+            this.students.add(s);
         }
     }
 }

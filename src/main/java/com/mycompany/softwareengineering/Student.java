@@ -17,20 +17,19 @@ public class Student {
     private Course course;
 //Just have getAge function instead of having variable
 
+    public Student(String name, String dOB) {
+        this.name = name;
+        this.dOB = DateTime.parse(dOB);
+        username = name + dOB;
+        modules = new ArrayList<Module>();
+    }
+
     public Student(String name, String dOB, String course) {
 //Course
         this.name = name;
         this.dOB = DateTime.parse(dOB);
         username = name + dOB;
-    }
-
-    public Student(String name, String dOB) {
-
-        this.name = name;
-
-        this.dOB = DateTime.parse(dOB);
-
-        username = name + dOB;
+        modules = new ArrayList<Module>();
     }
 
     public int getAge() {
