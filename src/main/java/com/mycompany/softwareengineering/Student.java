@@ -11,37 +11,52 @@ import java.util.ArrayList;
 public class Student {
 
     private String name, username;
-    private int age, iD;
+    private int iD;
     private DateTime dOB;
     private ArrayList<Module> modules;
     private Course course;
-//Just have getAge function instead of having variable
 
-    public Student(String name, String dOB) {
+    public Student(String name, String dOB, int iD) {
         this.name = name;
         this.dOB = DateTime.parse(dOB);
-        username = name + dOB;
-        modules = new ArrayList<Module>();
+        this.username = name + Integer.toString(this.getAge());
+        this.modules = new ArrayList<Module>();
+        this.iD = iD;
     }
 
-    public Student(String name, String dOB, String course) {
-//Course
+    public Student(String name, String dOB, int iD, Course course) {
+        //Course overloaded constructor, takes an additional course parameter
         this.name = name;
         this.dOB = DateTime.parse(dOB);
-        username = name + dOB;
-        modules = new ArrayList<Module>();
+        this.username = name + Integer.toString(getAge());
+        this.modules = new ArrayList<Module>();
+        this.iD = iD;
+        this.course = course;
+    }
+    
+    public int getID(){
+        return this.iD;
     }
 
     public int getAge() {
+        //getAge Function isntead of variable
         Years age = Years.yearsBetween(dOB, DateTime.now());
         return age.getYears();
     }
 
     public void setCourse(Course c) {
-        course = c;
+        this.course = c;
+    }
+
+    public Course getCourse() {
+        return this.course;
     }
 
     public void addModule(Module m) {
-        modules.add(m);
+        this.modules.add(m);
+    }
+
+    public ArrayList<Module> getModules() {
+        return this.modules;
     }
 }

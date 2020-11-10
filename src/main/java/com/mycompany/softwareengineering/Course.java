@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Course {
 
     private String name;
-    public ArrayList<Student> students;
-    public ArrayList<Module> modules;
+    private ArrayList<Student> students;
+    private ArrayList<Module> modules;
     private final DateTime startDate, endDate;
 
     public Course(String name, DateTime startDate, DateTime endDate) {
@@ -39,8 +39,12 @@ public class Course {
         }
     }
 
-    public ArrayList<Module> getmodules() {
+    public ArrayList<Module> getModules() {
         return modules;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
     }
 
 }

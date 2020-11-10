@@ -45,26 +45,23 @@ public class CourseTest {
     @Test
     public void testAddStudent() {
         System.out.println("addStudent");
-        Student s = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000");
+        Student s = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000", 16742061);
         Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
         instance.addStudent(s);
         System.out.println(instance.toString() + s.toString());
-        assertSame(instance.students.get(0), s);
+        assertSame(instance.getStudents().get(0), s);
     }
     
     /**
-     * Test of getmodules method, of class Course.
+     * Test of getModules method, of class Course.
      */
     @Test
-    public void testGetmodules() {
+    public void testGetModules() {
         System.out.println("getmodules");
-        Module expResult = new Module("Software Engineering", "CT4321");
+        Module m = new Module("Software Engineering", "CT4321");
         Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
-        instance.addModule(expResult);
-        //ArrayList<Module> expList = new ArrayList<Module>();
-        //expList.add(new Module("Software Engineering", "CT4321"));
-        ArrayList<Module> result = instance.getmodules();
-        assertEquals(expResult, result.get(0));
+        instance.addModule(m);
+        assertEquals(m, instance.getModules().get(0));
     }
     @Test
     public void testAddModule() {
@@ -72,6 +69,6 @@ public class CourseTest {
         Module m = new Module("Software Engineering", "CT411");
         Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
         instance.addModule(m);
-        assertSame(instance.modules.get(0), m);
+        assertSame(instance.getModules().get(0), m);
     }
 }
