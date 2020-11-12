@@ -15,31 +15,36 @@ public class Module {
         this.courses = new ArrayList<Course>();
     }
 
+    //Adds course
     public void addCourse(Course c) {
         if (c != null) {
             this.courses.add(c);
         }
     }
 
+    //Gets Course
     public ArrayList<Course> getCourses() {
         return this.courses;
     }
 
+    //Removes Course
     public boolean removeCourse(Course c) {
         return this.courses.remove(c);
     }
     
-
+    //adds a Student to list of Students attending
     public void addStudent(Student s) {
         if (s != null) {
             this.students.add(s);
         }
     }
 
+    //removes a Student to list of Students attending
     public boolean removeStudent(Student s) {
         return this.students.remove(s);
     }
-
+    
+    //Returns list of Students attending
     public ArrayList<Student> getStudents() {
         return this.students;
     }

@@ -33,17 +33,20 @@ public class Student {
         this.iD = iD;
         this.course = course;
     }
-    
-    public int getID(){
+
+    //Returns Student ID 
+    public int getID() {
         return this.iD;
     }
 
+    //Returns Student Age from DOB
     public int getAge() {
         //getAge Function isntead of variable
         Years age = Years.yearsBetween(dOB, DateTime.now());
         return age.getYears();
     }
 
+    //Sets Students Course
     public void setCourse(Course c) {
         this.course = c;
     }
@@ -58,5 +61,15 @@ public class Student {
 
     public ArrayList<Module> getModules() {
         return this.modules;
+    }
+
+    public void removeModule(Module m) {
+        this.modules.remove(m);
+    }
+
+    public void removeCourse(Course c) {
+        if (this.course == c) {
+            this.course = null;
+        }
     }
 }
