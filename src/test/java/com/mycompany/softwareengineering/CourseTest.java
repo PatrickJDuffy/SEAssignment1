@@ -45,7 +45,7 @@ public class CourseTest {
     @Test
     public void testAddStudent() {
         System.out.println("addStudent");
-        Student s = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        Student s = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
         Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
         instance.addStudent(s);
         System.out.println(instance.toString() + s.toString());

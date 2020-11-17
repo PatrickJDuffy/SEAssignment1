@@ -45,7 +45,7 @@ public class StudentTest {
     @Test
     public void testGetAge() {
         System.out.println("getAge");
-        Student instance = new Student("Patrick Duffy", "1996-09-17T20:40:00+0000", 16742061);
+        Student instance = new Student("Patrick", "Duffy", "1996-09-17T20:40:00+0000", 16742061);
         int expResult = 24;
         int result = instance.getAge();
         assertEquals(expResult, result);
@@ -57,7 +57,7 @@ public class StudentTest {
     @Test
     public void testSetCourse() {
         System.out.println("setCourse");
-        Student instance = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
         Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
         instance.setCourse(c);
         assertEquals(instance.getCourse(), c);
@@ -69,7 +69,7 @@ public class StudentTest {
     @Test
     public void testGetCourse() {
         System.out.println("getCourse");
-        Student instance = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
         Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
         instance.setCourse(c);
         Course result = instance.getCourse();
@@ -84,7 +84,7 @@ public class StudentTest {
     public void testAddModule() {
         System.out.println("addModule");
         Module m = new Module("Software Engineering", "CT411");
-        Student instance = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
         instance.addModule(m);
         assertEquals(instance.getModules().get(0), m);
     }
@@ -95,7 +95,7 @@ public class StudentTest {
     @Test
     public void testGetModule() {
         System.out.println("getModule");
-        Student instance = new Student("Patrick Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
         Module m = new Module("Software Engineering", "CT411");
         instance.addModule(m);
         assertEquals(m, instance.getModules().get(0));

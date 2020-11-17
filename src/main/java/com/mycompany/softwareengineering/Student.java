@@ -10,25 +10,27 @@ import java.util.ArrayList;
  */
 public class Student {
 
-    private String name, username;
+    private String fName, lName, username;
     private int iD;
     private DateTime dOB;
     private ArrayList<Module> modules;
     private Course course;
 
-    public Student(String name, String dOB, int iD) {
-        this.name = name;
+    public Student(String fName,String lName, String dOB, int iD) {
+        this.fName = fName;
+        this.lName = lName;
         this.dOB = DateTime.parse(dOB);
-        this.username = name + Integer.toString(this.getAge());
+        this.username = lName.substring(0, 2) + fName + Integer.toString(this.getAge());
         this.modules = new ArrayList<Module>();
         this.iD = iD;
     }
 
-    public Student(String name, String dOB, int iD, Course course) {
+    public Student(String fName, String lName, String dOB, int iD, Course course) {
         //Course overloaded constructor, takes an additional course parameter
-        this.name = name;
+        this.fName = fName;
+        this.lName = lName;
         this.dOB = DateTime.parse(dOB);
-        this.username = name + Integer.toString(getAge());
+        this.username = lName.substring(0, 2) + fName + Integer.toString(getAge());
         this.modules = new ArrayList<Module>();
         this.iD = iD;
         this.course = course;

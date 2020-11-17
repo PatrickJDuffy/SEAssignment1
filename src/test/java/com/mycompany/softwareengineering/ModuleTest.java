@@ -80,7 +80,7 @@ public class ModuleTest {
     @Test
     public void testAddStudent() {
         System.out.println("addStudent");
-        Student s = new Student("Patrick Duffy", "1996-09-17T20:40:00+0000", 16742061);
+        Student s = new Student("Patrick", "Duffy", "1996-09-17T20:40:00+0000", 16742061);
         Module instance = new Module("Software Engineering", "CT411");
         instance.addStudent(s);
         assertEquals(instance.getStudents().get(0), s);
@@ -90,7 +90,7 @@ public class ModuleTest {
     @Test
     public void testRemoveStudent() {
         System.out.println("removeStudent");
-        Student s = new Student("Patrick Duffy", "1996-09-17T20:40:00+0000", 16742061);
+        Student s = new Student("Patrick", "Duffy", "1996-09-17T20:40:00+0000", 16742061);
         Module instance = new Module("Software Engineering", "CT411");
         instance.addStudent(s);
         boolean result = instance.removeStudent(s);
@@ -101,7 +101,7 @@ public class ModuleTest {
     @Test
     public void testGetStudents() {
         System.out.println("getStudents");
-        Student s = new Student("Patrick Duffy", "1996-09-17T20:40:00+0000", 16742061);
+        Student s = new Student("Patrick", "Duffy", "1996-09-17T20:40:00+0000", 16742061);
         Module instance = new Module("Software Engineering", "CT411");
         instance.addStudent(s);
         assertEquals(s, instance.getStudents().get(0));
