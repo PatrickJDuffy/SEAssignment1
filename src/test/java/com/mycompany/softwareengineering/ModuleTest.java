@@ -105,6 +105,6 @@ public class ModuleTest {
     public void testtoString() {
         System.out.println("toString");
         Module instance = new Module("Software Engineering", "CT411");
-        assertEquals("\tModule Name(Code) : Software Engineering (CT411)\n", instance.toString());
+        assertEquals("\n\tModule Name(Code) : Software Engineering (CT411)", instance.toString());
     }
 }
