@@ -14,6 +14,10 @@ public class Module {
         this.students = new ArrayList<Student>();
         this.courses = new ArrayList<Course>();
     }
+    
+    public String toString(){
+        return "Module Name : " + this.name + "\nModule Code : " + this.iD + "\n";
+    }
 
     //Adds course
     public void addCourse(Course c) {

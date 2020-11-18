@@ -35,6 +35,16 @@ public class Student {
         this.iD = iD;
         this.course = course;
     }
+    
+    @Override
+    public String toString(){
+        
+        
+        return "Name : " + fName + " " + lName + "\n" +
+                "Course : " + course + "\n" + 
+                "Modules : " + modules;
+        //***********************Print Module names
+    }
 
     //Returns Student ID 
     public int getID() {
