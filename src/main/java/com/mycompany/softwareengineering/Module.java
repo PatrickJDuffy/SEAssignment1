@@ -14,9 +14,9 @@ public class Module {
         this.students = new ArrayList<Student>();
         this.courses = new ArrayList<Course>();
     }
-    
-    public String toString(){
-        return "Module Name : " + this.name + "\nModule Code : " + this.iD + "\n";
+
+    public String toString() {
+        return "\n\tModule Name(Code) : " + this.name + " (" + this.iD + ")";
     }
 
     //Adds course
@@ -35,7 +35,7 @@ public class Module {
     public boolean removeCourse(Course c) {
         return this.courses.remove(c);
     }
-    
+
     //adds a Student to list of Students attending
     public void addStudent(Student s) {
         if (s != null) {
@@ -47,7 +47,7 @@ public class Module {
     public boolean removeStudent(Student s) {
         return this.students.remove(s);
     }
-    
+
     //Returns list of Students attending
     public ArrayList<Student> getStudents() {
         return this.students;

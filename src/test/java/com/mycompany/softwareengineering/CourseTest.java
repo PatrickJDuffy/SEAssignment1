@@ -46,7 +46,7 @@ public class CourseTest {
     public void testAddStudent() {
         System.out.println("addStudent");
         Student s = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
-        Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course instance = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         instance.addStudent(s);
         System.out.println(instance.toString() + s.toString());
         assertSame(instance.getStudents().get(0), s);
@@ -59,7 +59,7 @@ public class CourseTest {
     public void testGetModules() {
         System.out.println("getmodules");
         Module m = new Module("Software Engineering", "CT4321");
-        Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course instance = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         instance.addModule(m);
         assertEquals(m, instance.getModules().get(0));
     }
@@ -67,7 +67,7 @@ public class CourseTest {
     public void testAddModule() {
         System.out.println("addModule");
         Module m = new Module("Software Engineering", "CT411");
-        Course instance = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course instance = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         instance.addModule(m);
         assertSame(instance.getModules().get(0), m);
     }

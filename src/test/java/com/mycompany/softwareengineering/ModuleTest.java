@@ -19,42 +19,40 @@ import static org.junit.Assert.*;
  * @author duffy
  */
 public class ModuleTest {
-    
+
     public ModuleTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
-
 
     @Test
     public void testAddCourse() {
         System.out.println("addCourse");
         Module instance = new Module("Software Engineering", "CT411");
-        Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course c = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         instance.addCourse(c);
         assertEquals(c, instance.getCourses().get(0));
     }
-
 
     @Test
     public void testGetCourses() {
         System.out.println("getCourses");
         Module instance = new Module("Software Engineering", "CT411");
-        Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course c = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         ArrayList<Course> expResult = new ArrayList<Course>();
         expResult.add(c);
         expResult.add(c);
@@ -65,17 +63,15 @@ public class ModuleTest {
         assertEquals(expResult, instance.getCourses());
     }
 
-    
     @Test
     public void testRemoveCourse() {
         System.out.println("removeCourse");
-        Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course c = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         Module instance = new Module("Software Engineering", "CT411");
         instance.addCourse(c);
         boolean result = instance.removeCourse(c);
         assertEquals(true, result);
     }
-
 
     @Test
     public void testAddStudent() {
@@ -85,7 +81,6 @@ public class ModuleTest {
         instance.addStudent(s);
         assertEquals(instance.getStudents().get(0), s);
     }
-
 
     @Test
     public void testRemoveStudent() {
@@ -97,7 +92,6 @@ public class ModuleTest {
         assertEquals(true, result);
     }
 
-
     @Test
     public void testGetStudents() {
         System.out.println("getStudents");
@@ -106,5 +100,11 @@ public class ModuleTest {
         instance.addStudent(s);
         assertEquals(s, instance.getStudents().get(0));
     }
-    
+
+    @Test
+    public void testtoString() {
+        System.out.println("toString");
+        Module instance = new Module("Software Engineering", "CT411");
+        assertEquals("\tModule Name(Code) : Software Engineering (CT411)\n", instance.toString());
+    }
 }

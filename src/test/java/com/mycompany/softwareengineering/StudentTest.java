@@ -19,22 +19,22 @@ import static org.junit.Assert.*;
  * @author duffy
  */
 public class StudentTest {
-    
+
     public StudentTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -58,7 +58,7 @@ public class StudentTest {
     public void testSetCourse() {
         System.out.println("setCourse");
         Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
-        Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course c = new Course("CompSci", "GY350",  "2013-09-18", "2013-09-18");
         instance.setCourse(c);
         assertEquals(instance.getCourse(), c);
     }
@@ -70,11 +70,11 @@ public class StudentTest {
     public void testGetCourse() {
         System.out.println("getCourse");
         Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
-        Course c = new Course("CompSci", new DateTime("2013-09-18T20:40:00+0000"), new DateTime("2013-09-18T20:40:00+0000"));
+        Course c = new Course("CompSci", "GY350",  "2013-09-18", "2013-09-18");
         instance.setCourse(c);
         Course result = instance.getCourse();
         assertEquals(c, result);
-        
+
     }
 
     /**
@@ -100,5 +100,16 @@ public class StudentTest {
         instance.addModule(m);
         assertEquals(m, instance.getModules().get(0));
     }
-    
+
+    @Test
+    public void testtoString() {
+        System.out.println("toString");
+        Student instance = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        Module m1 = new Module("Software Engineering", "CT411");
+        Module m2 = new Module("Information Retrieval", "CT422");
+        instance.addModule(m1);
+        instance.addModule(m2);
+        instance.setCourse(new Course("CompSci", "GY350",  "2013-09-18", "2013-09-18"));
+        assertEquals("-------------------------------------------------------\nName : Patrick Duffy\nID : 16742061\nCourse(s) : \n\tCompSci\nModules : \n\tModule Name(Code) : Software Engineering (CT411)\n\tModule Name(Code) : Information Retrieval (CT422)\n", instance.toString());
+    }
 }

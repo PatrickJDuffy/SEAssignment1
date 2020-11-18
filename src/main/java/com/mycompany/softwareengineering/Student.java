@@ -16,7 +16,7 @@ public class Student {
     private ArrayList<Module> modules;
     private Course course;
 
-    public Student(String fName,String lName, String dOB, int iD) {
+    public Student(String fName, String lName, String dOB, int iD) {
         this.fName = fName;
         this.lName = lName;
         this.dOB = DateTime.parse(dOB);
@@ -35,15 +35,19 @@ public class Student {
         this.iD = iD;
         this.course = course;
     }
-    
+
     @Override
-    public String toString(){
-        
-        
-        return "Name : " + fName + " " + lName + "\n" +
-                "Course : " + course + "\n" + 
-                "Modules : " + modules;
-        //***********************Print Module names
+    public String toString() {
+        String ms = "";
+        for (int x = 0; x < modules.size(); x++) {
+            ms = ms.concat(modules.get(x).toString());
+        }
+
+        return "-------------------------------------------------------\n"
+                + "Name : " + fName + " " + lName + "\n"
+                + "ID : " + iD + "\n"
+                + "Course(s) : " + course.getCourse() + "\n"
+                + "Modules : " + ms + "\n";
     }
 
     //Returns Student ID 

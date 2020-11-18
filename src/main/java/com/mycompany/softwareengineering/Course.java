@@ -6,14 +6,16 @@ import java.util.ArrayList;
 public class Course {
 
     private String name;
+    private String courseID;
     private ArrayList<Student> students;
     private ArrayList<Module> modules;
     private final DateTime startDate, endDate;
 
-    public Course(String name, DateTime startDate, DateTime endDate) {
+    public Course(String name, String iD, String startDate, String endDate) {
         this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.courseID = iD;
+        this.startDate = new DateTime(startDate);
+        this.endDate = new DateTime(endDate);
         students = new ArrayList<Student>();
         modules = new ArrayList<Module>();
     }
@@ -33,15 +35,14 @@ public class Course {
             }
         }
     }
-    
-        
-    public void removeStudent(Student s){
+
+    public void removeStudent(Student s) {
         if (s != null) {
             if (this.students.contains(s)) {
                 //adds module and references this instance of course for its Course variable
                 s.removeCourse(this);
                 this.students.remove(s);
-   
+
                 if (!modules.isEmpty()) {
                     //Updates students Module list
                     for (int x = 0; x < modules.size(); x++) {
@@ -70,14 +71,14 @@ public class Course {
             }
         }
     }
-    
-    public void removeModule(Module m){
+
+    public void removeModule(Module m) {
         if (m != null) {
             if (this.modules.contains(m)) {
                 //adds module and references this instance of course for its Course variable
                 m.removeCourse(this);
                 this.modules.remove(m);
-   
+
                 if (!students.isEmpty()) {
                     //Updates students Module list
                     for (int x = 0; x < students.size(); x++) {
@@ -99,4 +100,7 @@ public class Course {
         return students;
     }
 
+    public String getCourse() {
+        return "\n\t" + this.name;
+    }
 }
