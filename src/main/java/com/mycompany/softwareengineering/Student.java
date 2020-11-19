@@ -65,6 +65,10 @@ public class Student {
     //Sets Students Course
     public void setCourse(Course c) {
         this.course = c;
+        if(!c.getStudents().contains(this)){
+           c.addStudent(this); 
+        }
+        
     }
 
     public Course getCourse() {

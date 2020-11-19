@@ -14,8 +14,8 @@ public class Course {
     public Course(String name, String iD, String startDate, String endDate) {
         this.name = name;
         this.courseID = iD;
-        this.startDate = new DateTime(startDate);
-        this.endDate = new DateTime(endDate);
+        this.startDate = DateTime.parse(startDate);
+        this.endDate = DateTime.parse(endDate);
         students = new ArrayList<Student>();
         modules = new ArrayList<Module>();
     }
@@ -27,7 +27,10 @@ public class Course {
             if (!this.students.contains(s)) {
                 this.students.add(s);
                 //The students Course variable is set to this Course instance 
-                s.setCourse(this);
+                if(s.getCourse() != this){
+                   s.setCourse(this); 
+                }
+                
                 //students modules are then updated by looping through course modules and adding to list
                 for (int x = 0; x < modules.size(); x++) {
                     s.addModule(modules.get(x));
