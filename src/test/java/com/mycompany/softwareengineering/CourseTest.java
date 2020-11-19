@@ -71,4 +71,18 @@ public class CourseTest {
         instance.addModule(m);
         assertSame(instance.getModules().get(0), m);
     }
+    
+        @Test
+    public void testtoString() {
+        System.out.println("toString");
+        Module m = new Module("Software Engineering", "CT411");
+        Course instance = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
+        Student s = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
+        instance.addModule(m);
+        instance.addStudent(s);
+        assertEquals(instance.toString(), "\n-------------------------------------------------------\n"
+                + "Course (Code): CompSci (GY350)\n"
+                + "Modules : \n\tModule Name(Code) : Software Engineering (CT411)\nStudents : "
+                + "\n\tPatrick Duffy (16742061)");
+    }
 }

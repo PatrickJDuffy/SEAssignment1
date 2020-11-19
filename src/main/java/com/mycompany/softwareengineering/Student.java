@@ -50,6 +50,9 @@ public class Student {
                 + "Modules : " + ms + "\n";
     }
 
+    public String getName(){
+        return this.fName + " " + this.lName;
+    }
     //Returns Student ID 
     public int getID() {
         return this.iD;

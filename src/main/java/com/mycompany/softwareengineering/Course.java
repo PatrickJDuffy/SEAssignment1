@@ -20,6 +20,22 @@ public class Course {
         modules = new ArrayList<Module>();
     }
 
+    @Override
+    public String toString() {
+        String str = "\n-------------------------------------------------------\n"
+                + "Course (Code): " + name + " (" + courseID + ")\n"
+                + "Modules : "; 
+        for (int x = 0; x < modules.size(); x++) {
+            str += modules.get(x).toString();
+        }
+        str += "\nStudents : ";
+        
+        for (int x = 0; x < students.size(); x++) {
+            str += "\n\t" + students.get(x).getName() + " (" + students.get(x).getID() + ")";
+        }
+        return str;
+    }
+
     //Adds Student to list of Students taking course
     public void addStudent(Student s) {
         if (s != null) //If the students list doesnt contain the Student, it is added
@@ -27,10 +43,10 @@ public class Course {
             if (!this.students.contains(s)) {
                 this.students.add(s);
                 //The students Course variable is set to this Course instance 
-                if(s.getCourse() != this){
-                   s.setCourse(this); 
+                if (s.getCourse() != this) {
+                    s.setCourse(this);
                 }
-                
+
                 //students modules are then updated by looping through course modules and adding to list
                 for (int x = 0; x < modules.size(); x++) {
                     s.addModule(modules.get(x));
