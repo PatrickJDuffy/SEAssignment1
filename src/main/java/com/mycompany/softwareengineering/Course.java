@@ -22,7 +22,7 @@ public class Course {
 
     @Override
     public String toString() {
-        String str = "\n-------------------------------------------------------\n"
+        String str = "\n------------------------------------------------------------------\n"
                 + "Course (Code): " + name + " (" + courseID + ")\n"
                 + "Modules : "; 
         for (int x = 0; x < modules.size(); x++) {
@@ -31,7 +31,7 @@ public class Course {
         str += "\nStudents : ";
         
         for (int x = 0; x < students.size(); x++) {
-            str += "\n\t" + students.get(x).getName() + " (" + students.get(x).getID() + ")";
+            str += students.get(x).toString();
         }
         return str;
     }

@@ -45,7 +45,7 @@ public class Student {
 
         return "-------------------------------------------------------\n"
                 + "Name : " + fName + " " + lName + "\n"
-                + "ID : " + iD + "\n"
+                + "ID : " + username + "\n"
                 + "Course(s) : " + course.getCourse() + "\n"
                 + "Modules : " + ms + "\n";
     }
@@ -56,6 +56,11 @@ public class Student {
     //Returns Student ID 
     public int getID() {
         return this.iD;
+    }
+    
+    //Returns Student username
+    public String getUsername() {
+        return this.username;
     }
 
     //Returns Student Age from DOB

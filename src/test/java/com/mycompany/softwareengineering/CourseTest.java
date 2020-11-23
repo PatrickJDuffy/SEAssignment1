@@ -81,10 +81,16 @@ public class CourseTest {
         Student s = new Student("Patrick", "Duffy", "2013-09-18T20:40:00+0000", 16742061);
         instance.addModule(m);
         instance.addStudent(s);
-        assertEquals(instance.toString(), "\n-------------------------------------------------------\n"
+        assertEquals(instance.toString(), "\n------------------------------------------------------------------\n"
                 + "Course (Code): CompSci (GY350)\n"
-                + "Modules : \n\tModule Name(Code) : Software Engineering (CT411)\nStudents : "
-                + "\n\tPatrick Duffy (16742061)");
+                + "Modules : \n\tModule Name(Code) : Software Engineering (CT411)"
+                + "\nStudents : -------------------------------------------------------"
+                + "\nName : Patrick Duffy\n"
+                + "ID : DuPatrick7\n"
+                + "Course(s) : \n"
+                + "\tCompSci\n"
+                + "Modules : \n"
+                + "\tModule Name(Code) : Software Engineering (CT411)\n");
     }
 
     /**
@@ -106,7 +112,7 @@ public class CourseTest {
     @Test
     public void testRemoveModule() {
         System.out.println("removeModule");
-         Module m = new Module("Software Engineering", "CT411");
+        Module m = new Module("Software Engineering", "CT411");
         Course instance = new Course("CompSci", "GY350", "2013-09-18", "2013-09-18");
         instance.addModule(m);
         instance.removeModule(m);

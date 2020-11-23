@@ -110,6 +110,6 @@ public class StudentTest {
         instance.addModule(m1);
         instance.addModule(m2);
         instance.setCourse(new Course("CompSci", "GY350",  "2013-09-18", "2013-09-18"));
-        assertEquals("-------------------------------------------------------\nName : Patrick Duffy\nID : 16742061\nCourse(s) : \n\tCompSci\nModules : \n\tModule Name(Code) : Software Engineering (CT411)\n\tModule Name(Code) : Information Retrieval (CT422)\n", instance.toString());
+        assertEquals("-------------------------------------------------------\nName : Patrick Duffy\nID : DuPatrick7\nCourse(s) : \n\tCompSci\nModules : \n\tModule Name(Code) : Software Engineering (CT411)\n\tModule Name(Code) : Information Retrieval (CT422)\n", instance.toString());
     }
 }
